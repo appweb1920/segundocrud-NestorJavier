@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/refacciones');
 });
+
+Route::resource('refacciones', 'RefaccionController');
+Route::post('refacciones/actualiza', 'RefaccionController@update');
+Route::get('refacciones/elimina/{id}', 'RefaccionController@destroy');
